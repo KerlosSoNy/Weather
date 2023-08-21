@@ -5,15 +5,14 @@ let pp2=document.querySelector('.temp2')
 let img1 = document.querySelector('.img1')
 
 // Variables
-let map = window.localStorage.getItem("Location") || "cairo"
+let map = window.localStorage.getItem("Location") || "cairo";
 let jsData = null;
-let saveLoc ="";
-
+let saveLoc =map;
 //Filter Side
-let regExp = /[a-z]/ig
+let regExpArabic = /[^a-z][0-9]/ig
 let filterLoc =null
-filterLoc = map.match(regExp).join("");
-
+filterLoc = map.replace(regExpArabic,"")
+console.log(filterLoc)
 //Server Side
 let myRequest = new XMLHttpRequest();
 myRequest.open("Get",`https://api.weatherapi.com/v1/current.json?key=940d705ebda04be0873213329232008&q=${filterLoc}&aqi=no`,true)
@@ -22,11 +21,10 @@ myRequest.send()
 
 //Form Side
 document.forms[0].onsubmit = function(e) {
-    
     let condi = false
     if (inputText.value !== "" && inputText.value.length >= 3) {
         condi = true;
-        saveLoc =inputText.value;
+        saveLoc = inputText.value;
         window.localStorage.setItem("Location" ,saveLoc)
     }
     if (condi == false) {
