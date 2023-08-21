@@ -27,6 +27,7 @@ body{
 }
 .input{
     width: 70%;
+    height: 5%;
     padding: 10px;
     background-color: rgba(255, 255, 255, 0.8);
     border: transparent;
@@ -38,28 +39,46 @@ body{
     color: white;
 }
 
-@media (min-width:200px) and (max-width:1000px) {
+.temp1{
+    margin-top: -2%;
+    font-size: 5rem;
+    color: white;
+}
+@media (max-width:990px) {
+    .input{
+        margin-top: 10%;
+        width: 85%;
+        height: 5vh;    
+        font-size: 2.5vh;
+
+    }
+    .bttn{
+        padding: 0px;
+        height: 5vh;
+        width: 10%;
+        font-size:2.5vh;
+    }
     .temp{
-        margin-top: 13%;
-        font-size: 16vh;
+        margin-top: 25%;
+        font-size: 18vh;
         color: white;
     }
     .temp1{
-        margin-top: -8%;
+        margin-top: -5%;
+        font-size: 5vh;
+        color: white;
     }
-}
-.temp1{
-    font-size: 3rem;
-    color: white;
 }
 
 
 .temp2{
-    font-size: 2rem;
+    font-size: 3rem;
     color: white;
 }
 
-.img1{
-    width: 8rem;
-    height: 9rem;
+.img1 {
+    width: 10rem;
+    height: 10rem;
+    margin-left: auto;
+    margin-right: auto;
 }

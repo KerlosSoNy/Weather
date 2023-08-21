@@ -12,7 +12,7 @@ myRequest.send()
 
 document.forms[0].onsubmit = function(e) {
     let condi = false
-    if (inputText.value !== "" && inputText.value.length >= 4) {
+    if (inputText.value !== "" && inputText.value.length >= 3) {
         condi = true;
         let saveLoc =inputText.value;
         window.localStorage.setItem("Location" ,saveLoc)
@@ -28,6 +28,7 @@ myRequest.onreadystatechange = function(){
         pp1.innerHTML=`${jsData.location.name}, ${jsData.location.country} `
         pp.innerHTML=`${jsData.current.temp_c}&deg;C.`;
         pp2.innerHTML=`${jsData.current.condition.text}`;
+        img1.style.display="block"
         img1.setAttribute("src",`${jsData.current.condition.icon}`)
     }else{
         pp1.innerHTML="Error 404";
