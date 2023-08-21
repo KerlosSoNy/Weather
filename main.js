@@ -7,7 +7,7 @@ let map = window.localStorage.getItem("Location")
 let jsData = null;
 let dataNew = null;
 let myRequest = new XMLHttpRequest();
-myRequest.open("Get",`http://api.weatherapi.com/v1/current.json?key=940d705ebda04be0873213329232008&q=${map||"cairo"}&aqi=no`,true)
+myRequest.open("Get",`https://api.weatherapi.com/v1/current.json?key=940d705ebda04be0873213329232008&q=${map||"cairo"}&aqi=no`,true)
 myRequest.send()
 
 document.forms[0].onsubmit = function(e) {
